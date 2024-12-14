@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const inputs = document.querySelectorAll(".form-group input");
-
+  
     // Input field behavior
     inputs.forEach((input) => {
         input.addEventListener("input", () => {
@@ -11,33 +11,33 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-
+  
     let roomsData = []; // Declare roomsData to hold fetched data
-
-    // Ambil token dari cookie (misalnya nama cookie-nya adalah 'authToken')
-    const authToken = getCookie('Authorization');
-    console.log(authToken)
-        // Kirim permintaan fetch dengan Authorization header
-    fetch('https://beaps-treamyracles-projects.vercel.app/rooms', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${getCookie('Authorization')}`,
-            },
-            credentials: 'include', // Pastikan credentials disertakan
-        })
-        .catch(error => console.error("Error fetching data:", error))
-        .then((response) => response.json())
-        .then((data) => {
-            roomsData = data; // Store fetched data
-            const roomsContainer = document.querySelector(".popular__grid");
-            roomsContainer.innerHTML = ""; // Clear the container first
-
-            // Display the fetched rooms in the grid
-            data.forEach((room) => {
-                const roomElement = document.createElement("div");
-                roomElement.classList.add("popular__card");
-                roomElement.innerHTML = `
+  
+      // Ambil token dari cookie (misalnya nama cookie-nya adalah 'authToken')
+      const authToken = getCookie('Authorization');
+      console.log(authToken)
+      // Kirim permintaan fetch dengan Authorization header
+      fetch('https://feaps-treamyracles-projects.vercel.app/rooms', {
+        method: 'GET',  
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${getCookie('Authorization')}`, 
+        },
+        credentials: 'include', // Pastikan credentials disertakan
+    })
+    .catch(error => console.error("Error fetching data:", error))
+    .then((response) => response.json())
+    .then((data) => {
+        roomsData = data; // Store fetched data
+        const roomsContainer = document.querySelector(".popular__grid");
+        roomsContainer.innerHTML = ""; // Clear the container first
+  
+        // Display the fetched rooms in the grid
+        data.forEach((room) => {
+            const roomElement = document.createElement("div");
+            roomElement.classList.add("popular__card");
+            roomElement.innerHTML = `
                 <img src="${room.image_url || 'assets/g2.jpg'}" alt="Ruangan ${room.name}" />
                 <div class="popular__content">
                     <div class="popular__card__header">
@@ -52,11 +52,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                 </div>
             `;
-                roomsContainer.appendChild(roomElement);
-            });
-        })
-        .catch((error) => console.error("Error fetching data:", error));
-
+            roomsContainer.appendChild(roomElement);
+        });
+    })
+    .catch((error) => console.error("Error fetching data:", error));
+  
     // Function to get a specific cookie
     function getCookie(name) {
         const value = `; ${document.cookie}`;
@@ -65,5 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return "";
     }
 
-
-});
+    
+  });
+  
