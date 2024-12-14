@@ -102,7 +102,7 @@
             return;
           }
 
-          const response = await fetch("http://localhost:8080/notifications", {
+          const response = await fetch("https://beaps-treamyracles-projects.vercel.app/notifications", {
             method: "GET",
             headers: {
               Authorization: `Bearer ${authorizationToken}`,
@@ -189,7 +189,7 @@
             return;
           }
 
-          const response = await fetch("http://localhost:8080/rooms", {
+          const response = await fetch("https://beaps-treamyracles-projects.vercel.app/rooms", {
             method: "GET",
             headers: {
               Authorization: `Bearer ${authorizationToken}`,
