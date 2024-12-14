@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                     <div class="popular__description">
                         <p>${room.description}</p>
-                        <a href="informasi.html?id=${room.id}">
+                        <a href="/page/informasi.html?id=${room.id}">
                             <button class="btn lebih__lanjut">Detail</button>
                         </a>
                     </div>

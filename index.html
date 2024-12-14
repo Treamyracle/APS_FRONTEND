@@ -27,7 +27,7 @@
         src="../assets/LOGO.png"
         alt="Logo FILKOMreserV"
         onclick="location.reload();"
-        onclick="window.location.href='login.html'"
+        onclick="window.location.href='/page/login.html'"
       />
 
       <ul class="nav__links">
@@ -35,7 +35,7 @@
         <li class="link"><a href="#booklet">Buku Panduan</a></li>
         <li class="link"><a href="#footer">Kontak Kami</a></li>
         <li class="link">
-          <a href="notifikasi.html" style="display: flex; align-items: center">
+          <a href="/page/notifikasi.html" style="display: flex; align-items: center">
             <i
               class="ri-notification-3-line"
               style="font-size: 1.5rem; margin-right: 5px"
@@ -318,7 +318,7 @@
         } else {
           authButton.textContent = "Login"; // Tetap Login
           authButton.onclick = function () {
-            window.location.href = "login.html"; // Arahkan ke halaman login
+            window.location.href = "/page/login.html"; // Arahkan ke halaman login
           };
         }
       };
