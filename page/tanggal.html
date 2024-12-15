@@ -137,11 +137,7 @@
             formData.append("start_time", checkin);
             formData.append("end_time", checkout);
             formData.append("status", "proses");
-            if (fileUpload) {
-                formData.append("file", fileUpload);
-            } else {
-                formData.append("file", "."); // Pastikan mengirimkan string kosong jika tidak ada file
-            }
+            formData.append("file", "sementara.pdf")
             formData.append("description", deskripsi);
 
             for (let pair of formData.entries()) {
