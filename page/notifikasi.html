@@ -92,7 +92,7 @@
                                     notifCard.classList.add("notifikasi__card");
 
                                     // Menentukan class dan judul berdasarkan status
-                                    if (notification.status === "diterima") {
+                                    if (notification.status === "Diterima") {
                                         notifCard.classList.add("diterima");
                                         notifCard.innerHTML = `
                   <h3>Peminjaman Diterima</h3>
@@ -110,7 +110,7 @@
                   <p>${notification.room_name}, ${notification.borrow_date}, ${notification.start_time} - ${notification.end_time}</p>
                   <p>Status: <span class="status-processing">Proses</span></p>
                 `;
-                        } else if (notification.status === "ditolak") {
+                        } else if (notification.status === "Ditolak") {
                             notifCard.classList.add("ditolak");
                             notifCard.innerHTML = `
                   <h3>Peminjaman Ditolak</h3>
